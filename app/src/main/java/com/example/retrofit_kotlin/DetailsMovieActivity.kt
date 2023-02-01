@@ -47,7 +47,6 @@ class DetailsMovieActivity : AppCompatActivity() {
                                     placeholder(R.drawable.poster_placeholder)
                                     scale(Scale.FILL)
                                 }
-
                                 tvMovieName.text = itBody.title
                                 tvTagLine.text = itBody.tagline
                                 tvMovieDateReleased.text = itBody.releaseDate
@@ -56,8 +55,6 @@ class DetailsMovieActivity : AppCompatActivity() {
                                 tvMovieBudget.text = itBody.budget.toString()
                                 tvMovieRevenue.text = itBody.revenue.toString()
                                 tvMovieOverview.text= itBody.overview.toString()
-
-
                             }
                         }
                         //Redirection message
