@@ -3,9 +3,11 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_margin="8dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/dataRoot"
         android:layout_width="match_parent"
         android:layout_height="130dp"
         android:layout_marginTop="50dp"
@@ -22,19 +24,105 @@
             app:layout_constraintGuide_begin="150dp"/>
 
         <TextView
+            android:id="@+id/tvMovieName"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="8dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="16dp"
-            android:text="Movie name"
-            android:textSize="14sp"
+            tools:text="Movie name"
+            android:textSize="16sp"
             android:textStyle="bold"
             android:textColor="@color/SandyTan"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@id/guildLine"
             app:layout_constraintTop_toTopOf="parent"/>
 
+        <ImageView
+            android:id="@+id/imgRate"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/round_star_24"
+            app:layout_constraintStart_toStartOf="@id/guildLine"
+            app:layout_constraintTop_toBottomOf="@id/tvMovieName"
+            />
+        <TextView
+            android:id="@+id/tvRate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Rate"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/imgRate"
+            app:layout_constraintTop_toTopOf="@id/imgRate"
+            app:layout_constraintBottom_toBottomOf="@id/imgRate"/>
+
+        <ImageView
+            android:id="@+id/imgLang"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/baseline_language_24"
+            app:layout_constraintStart_toStartOf="@id/guildLine"
+            app:layout_constraintTop_toBottomOf="@id/imgRate"/>
+        
+        <TextView
+            android:id="@+id/tvLang"
+            android:textColor="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Lang"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/imgLang"
+            app:layout_constraintTop_toTopOf="@id/imgLang"
+            app:layout_constraintBottom_toBottomOf="@id/imgLang"/>
+
+        <ImageView
+            android:id="@+id/imgDate"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/baseline_date_range_24"
+            app:layout_constraintTop_toBottomOf="@+id/imgLang"
+            app:layout_constraintStart_toStartOf="@id/guildLine"/>
+
+        <TextView
+            android:id="@+id/tvDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Date"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/imgDate"
+            app:layout_constraintTop_toTopOf="@id/imgDate"
+            app:layout_constraintBottom_toBottomOf="@id/imgDate"/>
+        
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/imgRoot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/dataRoot"
+        app:layout_constraintBottom_toBottomOf="@id/dataRoot"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="20dp">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/imgMovie"
+            android:layout_width="115dp"
+            android:layout_height="160dp"
+            android:scaleType="fitXY"
+            android:background="@color/white"
+            app:shapeAppearanceOverlay="@style/RoundImageView"
+            app:srcCompat="@drawable/poster_placeholder"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
