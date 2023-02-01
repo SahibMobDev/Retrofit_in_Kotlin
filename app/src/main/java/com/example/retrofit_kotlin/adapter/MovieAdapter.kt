@@ -1,5 +1,6 @@
 package com.example.retrofit_kotlin.adapter
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
@@ -30,10 +31,14 @@ class MovieAdapter : RecyclerView.Adapter<MovieAdapter.ViewHolder>() {
         return differ.currentList.size
     }
 
+    override fun getItemViewType(position: Int): Int {
+        return position
+    }
+
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bind(differ.currentList[position])
     }
-
+    @SuppressLint("SetTextI18n")
     inner class ViewHolder: RecyclerView.ViewHolder(binding.root) {
         fun bind(item: MovieListResponse.Result) {
             binding.apply {
